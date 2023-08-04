@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="官网.css" />
+    <script src="官网.js"></script>
+  </head>
+  <body>
+    <div class="slider">
+      <img src="gw/选择广大，绽放未来.jpg" class="imgs" alt="" />
+      <a href="#" class="prev"> &lt;</a>
+      <a href="#" class="next"> &gt;</a>
+      <span class="slider-wrapper"><a>新闻网 </a>|<a> ENGLISH</a></span>
+      <ul class="tab">
+        <li class="tab1">
+          <a href="">学校概况</a>
+          <ul class="1">
+            <li>学校简介</li>
+            <li>现任领导</li>
+            <li>学校章程</li>
+            <li>校训校徽校歌</li>
+            <li>校园风景</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">组织机构</a>
+          <ul class="2">
+            <li>学院(部)</li>
+            <li>管理服务机构</li>
+            <li>科研单位</li>
+            <li>直属单位</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">师资队伍</a>
+          <ul class="3">
+            <li>队伍概况</li>
+            <li>人才招聘</li>
+            <li>杰出人才</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">人才培养</a>
+          <ul class="4">
+            <li>本科生培养</li>
+            <li>研究生培养</li>
+            <li>留学生培养</li>
+            <li>继续教育</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">招生就业</a>
+          <ul class="5">
+            <li>本科生招生</li>
+            <li>研究生招生</li>
+            <li>成人教育招生</li>
+            <li>留学生招生</li>
+            <li>就业指导</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">科学研究</a>
+          <ul class="6">
+            <li>科学研究简况</li>
+            <li>重点科研平台</li>
+            <li>学术期刊</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">学科建设</a>
+          <ul class="7">
+            <li>重点学科</li>
+            <li>博士点</li>
+            <li>学术硕士点</li>
+            <li>专业硕士点</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">人才招聘</a>
+          <ul class="s8">
+            <li>高层次人才招聘公告</li>
+            <li>博士后招聘公告</li>
+            <li>其他系列招聘公告</li>
+          </ul>
+        </li>
+
+        <li class="tab1">
+          <a href="">合作交流</a>
+          <ul class="s9">
+            <li>国际交流与合作</li>
+            <li>港澳台交流与合作</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="slider-middle"></div>
+    <ul class="slider-border">
+      <li>
+        <span class="a1"><img src="gw/1.png" alt="" /></span
+        ><span class="a2">数字广大</span>
+      </li>
+      <li>
+        <span class="a1"><img src="gw/2.png" alt="" /></span
+        ><span class="a2">个人邮箱</span>
+      </li>
+      <li>
+        <span class="a1"><img src="gw/3.png" alt="" /></span
+        ><span class="a2">图 书 馆</span>
+      </li>
+      <li>
+        <span class="a1"><img src="gw/4.png" alt="" /></span
+        ><span class="a2">招标信息</span>
+      </li>
+      <li>
+        <span class="a1"><img src="gw/5.png" alt="" /></span
+        ><span class="a2">热门站点</span>
+      </li>
+      <li>
+        <span class="a1"><img src="gw/6.png" alt="" /></span
+        ><span class="a2">校友之窗</span>
+      </li>
+      <li>
+        <span class="a1"><img src="gw/7.png" alt="" /></span
+        ><span class="a2">领导信箱</span>
+      </li>
+    </ul>
+    <!-- ----------------------------------------------------------- -->
+    <script>
+      const sliderimg = [
+        { url: "./gw/选择广大，绽放未来.jpg" },
+        { url: "./gw/学思想，强党性.png" },
+        { url: "./gw/比学赶超.jpg" },
+        { url: "./gw/奋勇争先.jpg" },
+        { url: "./gw/伟大复兴.jpg" },
+      ];
+      const img1 = document.querySelector(".slider .imgs");
+      const next = document.querySelector(".next");
+      const prev = document.querySelector(".prev");
+      let i = 0;
+      next.addEventListener("click", function () {
+        i++;
+        if (i >= sliderimg.length) {
+          i = 0;
+        }
+        toggle();
+      });
+
+      prev.addEventListener("click", function () {
+        i--;
+        if (i < 0) {
+          i = sliderimg.length - 1;
+        }
+        toggle();
+      });
+      function toggle() {
+        img1.src = sliderimg[i].url;
+      }
+
+      let timerId = setInterval(function () {
+        next.click();
+      }, 3000);
+      const slider = document.querySelector(".slider");
+      //关闭定时器
+      slider.addEventListener("mouseenter", function () {
+        clearInterval(timerId);
+      });
+      //开启定时器
+      slider.addEventListener("mouseleave", function () {
+        clearInterval(timerId);
+        timerId = setInterval(function () {
+          next.click();
+        }, 3000);
+      });
+      //-----------------------------------------------------
+      //
+      const tab = document.querySelectorAll(".tab a");
+      for (let i = 0; i < tab.length; i++) {
+        tab[i].addEventListener("mouseenter", function () {
+          // document.querySelector(".tab .active").classList.remove("active");
+          document
+            .querySelector(`.tab li:nth-child(${i + 1}) ul`)
+            .classList.add("active");
+        });
+        tab[i].addEventListener("mouseleave", function () {
+          document.querySelector(".tab .active").classList.remove("active");
+        });
+      }
+      // --------------------------------------------------
+      window.addEventListener("scroll", function () {
+        const n = document.documentElement.scrollTop;
+        const tab = document.querySelector(".tab");
+        const sliderborder = document.querySelector(".slider-border");
+        if (n >= 86) {
+          tab.classList.add("change");
+        } else {
+          tab.classList.remove("change");
+        }
+
+        if (n >= 770) {
+          sliderborder.classList.add("change1");
+        } else {
+          sliderborder.classList.remove("change1");
+        }
+      });
+    </script>
+  </body>
+</html>

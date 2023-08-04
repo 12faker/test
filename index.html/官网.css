@@ -1,0 +1,166 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+li {
+    list-style: none;
+}
+a {
+text-decoration:none;
+color:aliceblue;
+}
+body{
+    height: 3297px;
+}
+.slider {
+    position: relative;
+    margin:0 auto;
+    width:1300px;
+    height:610px;
+}
+.slider-wrapper {
+    position:absolute;
+    top:35px;
+    right:104px;
+    font-size: 15px;
+    color:aliceblue;
+}
+.slider img{
+    display: block;
+    width:1300px;
+    height:610px;
+}
+.tab {
+   position: absolute;
+    top: 85px; 
+    left:355px;
+    color:white;
+    font-size: 18px;
+}
+.tab .tab1{
+    float:left;
+    margin-right: 30px;
+}
+.tab .tab1 a{
+    text-shadow: 2px 2px 2px black;
+}
+.tab .tab1 ul{
+    display: none;
+}
+.tab .tab1 ul{
+    position: absolute;
+    margin-left: -13px;
+    margin-top: 34px;
+    padding:10px 0px 25px 30px;
+    width:206px;
+    border-top: 2px solid #318640;
+    background-color: rgba(241, 250, 249, 0.8);
+    line-height: 45px;
+    color:black; 
+}
+.tab .tab1 ul li{
+    width:170px;
+    height:45px;
+    border-bottom:1px solid #c8c6c7;
+}
+.tab .s8{
+    position: absolute;
+    right:113px;
+}
+.tab .s9{
+    position: relative;
+    right:16px;
+}
+/* tab栏显示 */
+.tab .tab1 .active{
+    display: block;
+}
+/* tab变化*/
+.change{
+   position:fixed;
+   top:33px;
+   left:50%;
+   margin-left: -279px;
+
+}
+.change1{
+    position: fixed;
+    /* top:40%;
+    right:0px; */
+    top: 50%;
+    right:0px;
+    margin-top: -160px;
+}
+.prev,.next {
+    position: absolute; 
+    top:50%;
+    margin-top: -35px;
+    width:70px;
+    height:70px;
+    border-radius: 70px;
+    background-color:aqua;
+    color: aliceblue;
+    line-height: 70px;
+    font-size: 40px;
+    background: rgba(0, 0, 0, 0.3)
+}
+.prev{
+   left:30px;
+   text-indent: 23px;
+}
+.next{
+   right:30px;
+   text-indent: 25px;
+}
+.slider-middle{
+    margin:0 auto;
+    width:1300px;
+    height:2000px;
+    background-color: rgb(254,250,245);
+}
+.slider-border{
+    position:fixed;
+    bottom: 68px;
+    right:0px;
+    width:120px;
+    height:320px;
+    line-height: center;
+    color:aliceblue;
+    background-color:rgba(103, 147, 111, 0.8); 
+}
+.slider-border li{
+    position: relative;
+    width:100%;
+    height:45px;
+    font-size: 14px;
+    border-bottom: 1px solid white;
+    transition:right 1s;
+}
+.slider-border li span{
+    margin-right:10px;
+}
+.slider-border li img {
+    position: relative;
+    top:10px;
+   width:22px;
+   height:22px;
+}
+.slider-border li .a1{
+    margin-left:20px
+}
+.slider-border li .a2{
+    position: relative;
+    top:4px;
+    height:14px;
+}
+/*悬浮过渡 */
+.slider-border li:hover{
+    right:15px;
+    width:135px;
+    background-color: #f6bc5b;
+}
+/* tab栏固定 */
+.fix{
+   position: fixed;
+   top:35px;
+}
